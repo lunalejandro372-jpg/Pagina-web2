@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electro Luna 2000 | Servicio Técnico y Electrónica Avanzada</title>
+    <!-- Google Fonts & Tailwind CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#0b0f19',
+                        cardBg: '#131c2e',
+                        neonGreen: '#00ff66',
+                        electricBlue: '#00f0ff',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        tech: ['Orbitron', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .glow-text {
+            text-shadow: 0 0 10px rgba(0, 240, 255, 0.5), 0 0 20px rgba(0, 240, 255, 0.3);
+        }
+        .glow-box {
+            box-shadow: 0 0 20px rgba(0, 255, 102, 0.15);
+        }
+        .glow-box:hover {
+            box-shadow: 0 0 25px rgba(0, 255, 102, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-darkBg text-gray-100 font-sans antialiased selection:bg-neonGreen selection:text-darkBg">
+
+    <!-- BARRA DE NAVEGACIÓN -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-darkBg/90 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-tr from-electricBlue to-neonGreen flex items-center justify-center glow-box">
+                    <i class="fa-solid fa-bolt text-darkBg text-xl font-bold"></i>
+                </div>
+                <div>
+                    <span class="font-tech font-bold text-lg tracking-wider text-white">ELECTRO LUNA <span class="text-neonGreen">2000</span></span>
+                    <p class="text-xs text-gray-400">Electrónica Yagua</p>
+                </div>
+            </div>
+            
+            <div class="hidden md:flex items-center space-x-8 font-medium">
+                <a href="#inicio" class="hover:text-electricBlue transition-colors">Inicio</a>
+                <a href="#servicios" class="hover:text-electricBlue transition-colors">Servicios</a>
+                <a href="#nosotros" class="hover:text-electricBlue transition-colors">¿Por qué elegirnos?</a>
+                <a href="#testimonios" class="hover:text-electricBlue transition-colors">Opiniones</a>
+                <a href="#contacto" class="hover:text-electricBlue transition-colors">Contacto</a>
+            </div>
+
+            <div class="hidden lg:flex items-center space-x-4">
+                <a href="https://wa.me/584121127920?text=Hola%20Electro%20Luna%202000,%20necesito%20diagnosticar%20un%20equipo." target="_blank" class="bg-neonGreen text-darkBg font-semibold px-5 py-2.5 rounded-lg hover:bg-emerald-400 transition-all flex items-center space-x-2 shadow-lg shadow-neonGreen/20">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>0412-112-7920</span>
+                </a>
+            </div>
+
+            <!-- Botón menú móvil -->
+            <div class="md:hidden flex items-center">
+                <button id="menu-btn" class="text-gray-300 hover:text-white focus:outline-none text-2xl">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menú desplegable móvil -->
+        <div id="mobile-menu" class="hidden md:hidden bg-cardBg border-b border-gray-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="#inicio" class="block py-2 hover:text-electricBlue">Inicio</a>
+            <a href="#servicios" class="block py-2 hover:text-electricBlue">Servicios</a>
+            <a href="#nosotros" class="block py-2 hover:text-electricBlue">¿Por qué elegirnos?</a>
+            <a href="#testimonios" class="block py-2 hover:text-electricBlue">Opiniones</a>
+            <a href="#contacto" class="block py-2 hover:text-electricBlue">Contacto</a>
+            <a href="https://wa.me/584121127920?text=Hola%20Electro%20Luna%202000,%20necesito%20diagnosticar%20un%20equipo." target="_blank" class="w-full bg-neonGreen text-darkBg font-semibold py-2.5 rounded-lg text-center flex items-center justify-center space-x-2 mt-4">
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+                <span>Escribir por WhatsApp</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- SECCIÓN INICIO (HERO) -->
+    <section id="inicio" class="pt-32 pb-20 md:pt-44 md:pb-32 relative overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/20 via-darkBg to-darkBg -z-10"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <div class="inline-flex items-center space-x-2 bg-cardBg border border-gray-800 px-3 py-1.5 rounded-full text-xs font-medium text-electricBlue">
+                        <span class="w-2 h-2 rounded-full bg-neonGreen animate-pulse"></span>
+                        <span>Servicio Técnico Profesional en Guacara y Yagua</span>
+                    </div>
+                    <h1 class="font-tech text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
+                        Expertos en <span class="text-electricBlue glow-text">Electrónica</span> y Reparación Avanzada
+                    </h1>
+                    <p class="text-gray-400 text-lg leading-relaxed">
+                        Solucionamos fallas a nivel de componentes en Smart TVs, monitores y equipos de audio. Diagnóstico preciso con tecnología de punta (T-CON, eMMC, UART y más).
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 pt-4">
+                        <a href="https://wa.me/584121127920?text=Hola,%20quisiera%20pedir%20un%20presupuesto%20para%20reparación." target="_blank" class="bg-neonGreen text-darkBg font-bold px-8 py-4 rounded-xl hover:bg-emerald-400 transition-all flex items-center justify-center space-x-3 shadow-lg shadow-neonGreen/20 text-center">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                            <span>Solicitar Diagnóstico</span>
+                        </a>
+                        <a href="#servicios" class="bg-cardBg border border-gray-700 text-white font-semibold px-8 py-4 rounded-xl hover:border-electricBlue transition-all text-center">
+                            Ver Servicios
+                        </a>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="relative mx-auto max-w-md bg-cardBg border border-gray-800 p-6 rounded-2xl shadow-2xl glow-box">
+                        <div class="absolute -top-3 -right-3 bg-neonGreen text-darkBg text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                            Garantizado
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-4 p-3 bg-darkBg/60 rounded-xl border border-gray-800">
+                                <div class="w-12 h-12 rounded-lg bg-electricBlue/10 flex items-center justify-center text-electricBlue text-xl">
+                                    <i class="fa-solid fa-tv"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-white">Smart TVs y Monitores</h3>
+                                    <p class="text-xs text-gray-400">Reparación de tarjetas Main y T-CON</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-4 p-3 bg-darkBg/60 rounded-xl border border-gray-800">
+                                <div class="w-12 h-12 rounded-lg bg-neonGreen/10 flex items-center justify-center text-neonGreen text-xl">
+                                    <i class="fa-solid fa-volume-high"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-white">Equipos de Audio y Amplificadores</h3>
+                                    <p class="text-xs text-gray-400">Potencia y fidelidad restaurada</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-4 p-3 bg-darkBg/60 rounded-xl border border-gray-800">
+                                <div class="w-12 h-12 rounded-lg bg-purple-500/10 flex items-center justify-center text-purple-400 text-xl">
+                                    <i class="fa-solid fa-microchip"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-white">Microelectrónica y Software</h3>
+                                    <p class="text-xs text-gray-400">Reprogramación de memorias eMMC y depuración</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN SERVICIOS -->
+    <section id="servicios" class="py-20 bg-darkBg/50 border-t border-b border-gray-800/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <h2 class="font-tech text-3xl sm:text-4xl font-bold">Nuestros <span class="text-electricBlue">Servicios Especializados</span></h2>
+                <p class="text-gray-400">Trabajamos con equipos modernos aplicando técnicas avanzadas de diagnóstico y reparación para alargar la vida útil de tus aparatos.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Servicio 1 -->
+                <div class="bg-cardBg border border-gray-800 p-8 rounded-2xl transition-all hover:border-electricBlue group">
+                    <div class="w-14 h-14 rounded-xl bg-electricBlue/10 text-electricBlue flex items-center justify-center text-2xl mb-6 group-hover:bg-electricBlue group-hover:text-darkBg transition-all">
+                        <i class="fa-solid fa-tv"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white">Smart TVs y Monitores</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        Solución a fallas de backlight (LEDs quemados), problemas de video en tarjetas T-CON, fallas de encendido y actualización de firmware.
+                    </p>
+                    <ul class="space-y-2 text-xs text-gray-300">
+                        <li><i class="fa-solid fa-check text-neonGreen mr-2"></i>Modificación de tiras LED</li>
+                        <li><i class="fa-solid fa-check text-neonGreen mr-2"></i>Diagnóstico de señales LVDS</li>
+                        <li><i class="fa-solid fa-check text-neonGreen mr-2"></i>Reparación de placas Main</li>
+                    </ul>
+                </div>
+
+                <!-- Servicio 2 -->
+                <div class="bg-cardBg border border-gray-800 p-8 rounded-2xl transition-all hover:border-neonGreen group">
+                    <div class="w-14 h-14 rounded-xl bg-neonGreen/10 text-neonGreen flex items-center justify-center text-2xl mb-6 group-hover:bg-neonGreen group-hover:text-darkBg transition-all">
+                        <i class="fa-solid fa-headphones-simple"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white">Equipos de Audio y Potencia</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        Reparación experta de amplificadores, sistemas de sonido y equipos de audio con problemas de distorsión, canales quemados o fuentes dañadas.
+                    </p>
+                    <ul class="space-y-2 text-xs text-gray-300">
+                        <li><i class="fa-solid fa-check text-neonGreen mr-2"></i>Restauración de etapas de salida</li>
+                        <li><i class="fa-solid fa-check text-neonGreen mr-2"></i>Fuentes de poder conmutadas</li>
+                        <li><i class="fa-solid fa-check text-neonGreen mr-2"></i>Fidelidad y potencia optimizadas</li>
+                    </ul>
+                </div>
+
+                <!-- Servicio 3 -->
+                <div class="bg-cardBg border border-gray-800 p-8 rounded-2xl transition-all hover:border-purple-500 group">
+                    <div class="w-14 h-14 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center text-2xl mb-6 group-hover:bg-purple-500 group-hover:text-darkBg transition-all">
+                        <i class="fa-solid fa-microchip"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white">Microelectrónica y Software</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        Grabación de memorias Flash e EEPROM, depuración mediante consola UART y solución a bloqueos de sistema operativo en televisores inteligentes.
+                    </p>
+                    <ul class="space-y-2 text-xs text-gray-300">
+                        <li><i class="fa-solid fa-check text-neonGreen mr-2"></i>Flashing de memorias eMMC</li>
+                        <li><i class="fa-solid fa-check text-neonGreen mr-2"></i>Depuración UART serial</li>
+                        <li><i class="fa-solid fa-check text-neonGreen mr-2"></i>Soldadura SMD de precisión</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN POR QUÉ ELEGIRNOS -->
+    <section id="nosotros" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <h2 class="font-tech text-3xl sm:text-4xl font-bold">¿Por qué confiar en <span class="text-neonGreen">Electro Luna 2000</span>?</h2>
+                    <p class="text-gray-400 leading-relaxed">
+                        Nos caracterizamos por la honestidad, el diagnóstico transparente y el uso de componentes de alta calidad. No cambiamos piezas por adivinar; medimos, probamos y reparamos con base técnica.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                        <div class="bg-cardBg border border-gray-800 p-4 rounded-xl">
+                            <div class="text-electricBlue font-bold text-xl mb-1"><i class="fa-solid fa-bolt mr-2"></i>Rápido</div>
+                            <p class="text-xs text-gray-400">Diagnósticos ágiles y tiempos de entrega cumplidos.</p>
+                        </div>
+                        <div class="bg-cardBg border border-gray-800 p-4 rounded-xl">
+                            <div class="text-neonGreen font-bold text-xl mb-1"><i class="fa-solid fa-shield-halved mr-2"></i>Garantía</div>
+                            <p class="text-xs text-gray-400">Respaldo y seguridad en cada trabajo realizado.</p>
+                        </div>
+                        <div class="bg-cardBg border border-gray-800 p-4 rounded-xl">
+                            <div class="text-purple-400 font-bold text-xl mb-1"><i class="fa-solid fa-screwdriver-wrench mr-2"></i>Especializado</div>
+                            <p class="text-xs text-gray-400">Herramientas profesionales y actualización constante.</p>
+                        </div>
+                        <div class="bg-cardBg border border-gray-800 p-4 rounded-xl">
+                            <div class="text-yellow-400 font-bold text-xl mb-1"><i class="fa-solid fa-handshake mr-2"></i>Económico</div>
+                            <p class="text-xs text-gray-400">Precios justos acordes al mercado y calidad.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-cardBg border border-gray-800 p-8 rounded-2xl relative glow-box">
+                    <h3 class="font-tech text-xl font-bold mb-6 text-center text-electricBlue">Ubicación y Atención</h3>
+                    <div class="space-y-4 text-sm text-gray-300">
+                        <div class="flex items-start space-x-3">
+                            <i class="fa-solid fa-location-dot text-neonGreen mt-1 text-lg"></i>
+                            <div>
+                                <strong class="text-white block">Zonas de Atención:</strong>
+                                <span class="text-gray-400">Guacara y Yagua, Estado Carabobo, Venezuela.</span>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <i class="fa-solid fa-phone text-electricBlue mt-1 text-lg"></i>
+                            <div>
+                                <strong class="text-white block">Teléfono de Contacto:</strong>
+                                <span class="text-gray-400">0412-112-79-20</span>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <i class="fa-brands fa-tiktok text-purple-400 mt-1 text-lg"></i>
+                            <div>
+                                <strong class="text-white block">Síguenos en TikTok:</strong>
+                                <span class="text-gray-400">@alejandro0411</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <a href="https://wa.me/584121127920?text=Hola,%20necesito%20información%20sobre%20cómo%20llegar%20al%20taller." target="_blank" class="w-full bg-electricBlue text-darkBg font-bold py-3 rounded-xl hover:bg-cyan-300 transition-all block text-center shadow-lg shadow-electricBlue/20">
+                            Consultar Dirección Exacta
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN TESTIMONIOS -->
+    <section id="testimonios" class="py-20 bg-darkBg/50 border-t border-gray-800/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <h2 class="font-tech text-3xl sm:text-4xl font-bold">Lo que opinan <span class="text-electricBlue">nuestros clientes</span></h2>
+                <p class="text-gray-400">La confianza de quienes han traído sus equipos a nuestro taller es nuestra mejor carta de presentación.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-cardBg border border-gray-800 p-6 rounded-2xl space-y-4">
+                    <div class="flex text-yellow-400 space-x-1 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-300 text-sm italic">"Mi Smart TV no encendía y en otros lados me querían cobrar una fortuna cambiando toda la tarjeta. Aquí me repararon el componente exacto y quedó perfecta. ¡Muy recomendado!"</p>
+                    <div class="text-xs text-gray-400 font-semibold">- Cliente de Guacara</div>
+                </div>
+
+                <div class="bg-cardBg border border-gray-800 p-6 rounded-2xl space-y-4">
+                    <div class="flex text-yellow-400 space-x-1 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-300 text-sm italic">"Excelente atención y profesionalismo. Llevé un amplificador con problemas de sonido y ahora suena con toda su potencia. Excelente servicio en Yagua."</p>
+                    <div class="text-xs text-gray-400 font-semibold">- Cliente de Yagua</div>
+                </div>
+
+                <div class="bg-cardBg border border-gray-800 p-6 rounded-2xl space-y-4">
+                    <div class="flex text-yellow-400 space-x-1 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-300 text-sm italic">"Honestidad y rapidez. Te explica exactamente qué tiene el aparato antes de hacer cualquier trabajo. Da mucha tranquilidad trabajar así."</p>
+                    <div class="text-xs text-gray-400 font-semibold">- Cliente local</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN CONTACTO -->
+    <section id="contacto" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="space-y-6">
+                    <h2 class="font-tech text-3xl sm:text-4xl font-bold">Ponte en contacto <span class="text-neonGreen">ahora mismo</span></h2>
+                    <p class="text-gray-400 leading-relaxed">
+                        ¿Tienes un equipo averiado o necesitas un presupuesto aproximado? Escríbenos directamente o déjanos tus datos en el formulario y te responderemos a la brevedad.
+                    </p>
+                    
+                    <div class="space-y-4 pt-2">
+                        <a href="https://wa.me/584121127920?text=Hola,%20necesito%20más%20información%20sobre%20sus%20servicios." target="_blank" class="flex items-center space-x-4 p-4 bg-cardBg border border-gray-800 rounded-xl hover:border-neonGreen transition-all group">
+                            <div class="w-12 h-12 rounded-lg bg-neonGreen/10 text-neonGreen flex items-center justify-center text-xl group-hover:bg-neonGreen group-hover:text-darkBg transition-all">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-gray-400 block">Escríbenos al WhatsApp</span>
+                                <span class="font-bold text-white text-lg">0412-112-79-20</span>
+                            </div>
+                        </a>
+
+                        <a href="https://www.tiktok.com/@alejandro0411" target="_blank" class="flex items-center space-x-4 p-4 bg-cardBg border border-gray-800 rounded-xl hover:border-electricBlue transition-all group">
+                            <div class="w-12 h-12 rounded-lg bg-electricBlue/10 text-electricBlue flex items-center justify-center text-xl group-hover:bg-electricBlue group-hover:text-darkBg transition-all">
+                                <i class="fa-brands fa-tiktok"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-gray-400 block">Visita nuestro TikTok</span>
+                                <span class="font-bold text-white text-lg">@alejandro0411</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Formulario funcional -->
+                <div class="bg-cardBg border border-gray-800 p-8 rounded-2xl relative glow-box">
+                    <h3 class="font-tech text-xl font-bold mb-6 text-white">Envíanos un mensaje</h3>
+                    
+                    <!-- Mensaje de éxito oculto inicialmente -->
+                    <div id="form-success" class="hidden bg-emerald-500/10 border border-neonGreen text-neonGreen p-4 rounded-xl mb-6 text-sm">
+                        <i class="fa-solid fa-circle-check mr-2"></i> ¡Mensaje preparado con éxito! Redirigiendo a WhatsApp...
+                    </div>
+
+                    <form id="contact-form" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-400 mb-2">Tu Nombre</label>
+                            <input type="text" id="nombre" required class="w-full bg-darkBg border border-gray-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-neonGreen transition-all" placeholder="Ej. Carlos Pérez">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-400 mb-2">Aparato o Falla</label>
+                            <input type="text" id="asunto" required class="w-full bg-darkBg border border-gray-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-neonGreen transition-all" placeholder="Ej. Smart TV no enciende / Amplificador sin audio">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-400 mb-2">Detalles del problema</label>
+                            <textarea id="mensaje" rows="4" required class="w-full bg-darkBg border border-gray-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-neonGreen transition-all" placeholder="Cuéntanos brevemente qué le pasa a tu equipo..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-neonGreen text-darkBg font-bold py-3.5 rounded-xl hover:bg-emerald-400 transition-all flex items-center justify-center space-x-2 shadow-lg shadow-neonGreen/20">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                            <span>Enviar por WhatsApp</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="bg-cardBg border-t border-gray-800 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
+            <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-electricBlue to-neonGreen flex items-center justify-center">
+                    <i class="fa-solid fa-bolt text-darkBg text-sm font-bold"></i>
+                </div>
+                <span class="font-tech font-bold text-white tracking-wider">ELECTRO LUNA <span class="text-neonGreen">2000</span></span>
+            </div>
+            
+            <p class="text-xs text-gray-500 text-center">
+                &copy; 2026 Electro Luna 2000 (Electrónica Yagua). Todos los derechos reservados. Guacara, Carabobo, Venezuela.
+            </p>
+
+            <div class="flex space-x-4 text-lg">
+                <a href="https://wa.me/584121127920" target="_blank" class="text-gray-400 hover:text-neonGreen transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://www.tiktok.com/@alejandro0411" target="_blank" class="text-gray-400 hover:text-electricBlue transition-colors"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPT INTERACTIVO -->
+    <script>
+        // Menú móvil toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Formulario conectado a WhatsApp
+        const contactForm = document.getElementById('contact-form');
+        const formSuccess = document.getElementById('form-success');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const nombre = document.getElementById('nombre').value;
+            const asunto = document.getElementById('asunto').value;
+            const mensaje = document.getElementById('mensaje').value;
+
+            const textoWhatsApp = `Hola, mi nombre es *${nombre}*. Me interesa consultar sobre: *${asunto}*. Detalles: ${mensaje}`;
+            const urlWhatsApp = `https://wa.me/584121127920?text=${encodeURIComponent(textoWhatsApp)}`;
+
+            formSuccess.classList.remove('hidden');
+            setTimeout(() => {
+                window.open(urlWhatsApp, '_blank');
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
