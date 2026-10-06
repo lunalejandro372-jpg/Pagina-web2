@@ -53,18 +53,18 @@
                 </div>
             </div>
             
-            <div class="hidden md:flex items-center space-x-8 font-medium">
+            <div class="hidden md:flex items-center space-x-6 font-medium text-sm">
                 <a href="#inicio" class="hover:text-electricBlue transition-colors">Inicio</a>
                 <a href="#servicios" class="hover:text-electricBlue transition-colors">Servicios</a>
+                <a href="#reparaciones" class="hover:text-electricBlue transition-colors text-neonGreen">Reparaciones en Vivo</a>
                 <a href="#nosotros" class="hover:text-electricBlue transition-colors">¿Por qué elegirnos?</a>
-                <a href="#testimonios" class="hover:text-electricBlue transition-colors">Opiniones</a>
                 <a href="#contacto" class="hover:text-electricBlue transition-colors">Contacto</a>
             </div>
 
             <div class="hidden lg:flex items-center space-x-4">
-                <a href="https://wa.me/584121127920?text=Hola%20Electro%20Luna%202000,%20necesito%20diagnosticar%20un%20equipo." target="_blank" class="bg-neonGreen text-darkBg font-semibold px-5 py-2.5 rounded-lg hover:bg-emerald-400 transition-all flex items-center space-x-2 shadow-lg shadow-neonGreen/20">
+                <a href="https://wa.me/584124028510?text=Hola%20Electro%20Luna%202000,%20necesito%20diagnosticar%20un%20equipo." target="_blank" class="bg-neonGreen text-darkBg font-semibold px-5 py-2.5 rounded-lg hover:bg-emerald-400 transition-all flex items-center space-x-2 shadow-lg shadow-neonGreen/20">
                     <i class="fa-brands fa-whatsapp text-lg"></i>
-                    <span>0412-112-7920</span>
+                    <span>0412-402-8510</span>
                 </a>
             </div>
 
@@ -80,10 +80,10 @@
         <div id="mobile-menu" class="hidden md:hidden bg-cardBg border-b border-gray-800 px-4 pt-2 pb-6 space-y-3">
             <a href="#inicio" class="block py-2 hover:text-electricBlue">Inicio</a>
             <a href="#servicios" class="block py-2 hover:text-electricBlue">Servicios</a>
+            <a href="#reparaciones" class="block py-2 hover:text-electricBlue text-neonGreen">Reparaciones en Vivo</a>
             <a href="#nosotros" class="block py-2 hover:text-electricBlue">¿Por qué elegirnos?</a>
-            <a href="#testimonios" class="block py-2 hover:text-electricBlue">Opiniones</a>
             <a href="#contacto" class="block py-2 hover:text-electricBlue">Contacto</a>
-            <a href="https://wa.me/584121127920?text=Hola%20Electro%20Luna%202000,%20necesito%20diagnosticar%20un%20equipo." target="_blank" class="w-full bg-neonGreen text-darkBg font-semibold py-2.5 rounded-lg text-center flex items-center justify-center space-x-2 mt-4">
+            <a href="https://wa.me/584124028510?text=Hola%20Electro%20Luna%202000,%20necesito%20diagnosticar%20un%20equipo." target="_blank" class="w-full bg-neonGreen text-darkBg font-semibold py-2.5 rounded-lg text-center flex items-center justify-center space-x-2 mt-4">
                 <i class="fa-brands fa-whatsapp text-lg"></i>
                 <span>Escribir por WhatsApp</span>
             </a>
@@ -107,12 +107,12 @@
                         Solucionamos fallas a nivel de componentes en Smart TVs, monitores y equipos de audio. Diagnóstico preciso con tecnología de punta (T-CON, eMMC, UART y más).
                     </p>
                     <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 pt-4">
-                        <a href="https://wa.me/584121127920?text=Hola,%20quisiera%20pedir%20un%20presupuesto%20para%20reparación." target="_blank" class="bg-neonGreen text-darkBg font-bold px-8 py-4 rounded-xl hover:bg-emerald-400 transition-all flex items-center justify-center space-x-3 shadow-lg shadow-neonGreen/20 text-center">
+                        <a href="https://wa.me/584124028510?text=Hola,%20quisiera%20pedir%20un%20presupuesto%20para%20reparación." target="_blank" class="bg-neonGreen text-darkBg font-bold px-8 py-4 rounded-xl hover:bg-emerald-400 transition-all flex items-center justify-center space-x-3 shadow-lg shadow-neonGreen/20 text-center">
                             <i class="fa-brands fa-whatsapp text-xl"></i>
                             <span>Solicitar Diagnóstico</span>
                         </a>
-                        <a href="#servicios" class="bg-cardBg border border-gray-700 text-white font-semibold px-8 py-4 rounded-xl hover:border-electricBlue transition-all text-center">
-                            Ver Servicios
+                        <a href="#reparaciones" class="bg-cardBg border border-gray-700 text-white font-semibold px-8 py-4 rounded-xl hover:border-neonGreen transition-all text-center">
+                            Ver Trabajos en Vivo
                         </a>
                     </div>
                 </div>
@@ -217,8 +217,87 @@
         </div>
     </section>
 
+    <!-- SECCIÓN NUEVA: GALERÍA DE REPARACIONES (FOTOS, VIDEOS, LIKES Y COMENTARIOS) -->
+    <section id="reparaciones" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <div class="inline-flex items-center space-x-2 bg-neonGreen/10 border border-neonGreen/30 px-4 py-1.5 rounded-full text-xs font-semibold text-neonGreen">
+                    <i class="fa-solid fa-camera"></i>
+                    <span>Muro Interactivo de Taller</span>
+                </div>
+                <h2 class="font-tech text-3xl sm:text-4xl font-bold">Reparaciones en <span class="text-neonGreen">Tiempo Real</span></h2>
+                <p class="text-gray-400">Mira nuestros trabajos recientes, danos un "Me gusta" o deja tu comentario abajo.</p>
+            </div>
+
+            <!-- PANEL PARA SUBIR NUEVA REPARACIÓN (Administrador / Dueño) -->
+            <div class="bg-cardBg border border-gray-800 p-6 sm:p-8 rounded-2xl mb-12 glow-box max-w-2xl mx-auto">
+                <h3 class="font-tech text-lg font-bold mb-4 text-white flex items-center">
+                    <i class="fa-solid fa-circle-plus text-neonGreen mr-2 text-xl"></i> Publicar Nuevo Trabajo en el Muro
+                </h3>
+                <form id="upload-work-form" class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-400 mb-1">Título de la Reparación</label>
+                        <input type="text" id="work-title" required class="w-full bg-darkBg border border-gray-800 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-neonGreen" placeholder="Ej. Cambio de LEDs Smart TV 55 pulgadas">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-400 mb-1">Enlace de la Foto o Video (Imagen URL o archivo)</label>
+                        <input type="url" id="work-media-url" required class="w-full bg-darkBg border border-gray-800 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-neonGreen" placeholder="Pega aquí el enlace de la imagen o video (ej. https://...)">
+                        <p class="text-[11px] text-gray-500 mt-1">Puedes subir tu foto a Imgur o copiar el enlace directo de una imagen de internet.</p>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-400 mb-1">Descripción corta</label>
+                        <textarea id="work-desc" rows="2" required class="w-full bg-darkBg border border-gray-800 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-neonGreen" placeholder="Breve detalle del trabajo realizado..."></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-neonGreen text-darkBg font-bold py-3 rounded-xl hover:bg-emerald-400 transition-all text-sm shadow-md shadow-neonGreen/20">
+                        Publicar Reparación
+                    </button>
+                </form>
+            </div>
+
+            <!-- CONTENEDOR DE PUBLICACIONES (Dinámico) -->
+            <div id="posts-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Publicación de Ejemplo 1 -->
+                <div class="bg-cardBg border border-gray-800 rounded-2xl overflow-hidden flex flex-col justify-between">
+                    <div>
+                        <div class="h-48 bg-gray-900 relative overflow-hidden flex items-center justify-center">
+                            <img src="https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=800&q=80" alt="Reparación TV" class="w-full h-full object-cover">
+                            <span class="absolute top-3 left-3 bg-darkBg/80 backdrop-blur-sm text-neonGreen text-xs font-bold px-2.5 py-1 rounded-md">Smart TV</span>
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <h4 class="font-bold text-lg text-white">Reparación de Backlight TV Samsung</h4>
+                            <p class="text-xs text-gray-400 leading-relaxed">Sustitución de tiras LED completas con modificación de corriente para garantizar durabilidad.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="px-6 pb-6 pt-2 border-t border-gray-800/60 space-y-4">
+                        <div class="flex items-center justify-between text-sm">
+                            <button onclick="likePost('demo-1')" class="flex items-center space-x-2 text-gray-400 hover:text-red-500 transition-colors">
+                                <i class="fa-solid fa-heart text-red-500"></i>
+                                <span id="likes-demo-1" class="font-semibold text-white">12</span> Me gusta
+                            </button>
+                            <span class="text-xs text-gray-500">Electro Luna 2000</span>
+                        </div>
+
+                        <!-- Comentarios -->
+                        <div class="space-y-2">
+                            <div id="comments-demo-1" class="space-y-1.5 max-h-28 overflow-y-auto text-xs">
+                                <div class="bg-darkBg/60 p-2 rounded-lg border border-gray-800">
+                                    <strong class="text-electricBlue">Carlos M.:</strong> Excelente trabajo, mi televisor quedó como nuevo.
+                                </div>
+                            </div>
+                            <form onsubmit="addComment(event, 'demo-1')" class="flex space-x-2 pt-1">
+                                <input type="text" id="input-comment-demo-1" placeholder="Escribe un comentario..." class="flex-1 bg-darkBg border border-gray-800 rounded-lg px-3 py-1.5 text-xs text-white focus:outline-none focus:border-electricBlue" required>
+                                <button type="submit" class="bg-electricBlue text-darkBg px-3 py-1.5 rounded-lg text-xs font-bold hover:bg-cyan-300">Comentar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- SECCIÓN POR QUÉ ELEGIRNOS -->
-    <section id="nosotros" class="py-20">
+    <section id="nosotros" class="py-20 bg-darkBg/50 border-t border-b border-gray-800/60">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div class="space-y-6">
@@ -261,19 +340,19 @@
                             <i class="fa-solid fa-phone text-electricBlue mt-1 text-lg"></i>
                             <div>
                                 <strong class="text-white block">Teléfono de Contacto:</strong>
-                                <span class="text-gray-400">0412-112-79-20</span>
+                                <span class="text-gray-400">0412-402-8510</span>
                             </div>
                         </div>
                         <div class="flex items-start space-x-3">
                             <i class="fa-brands fa-tiktok text-purple-400 mt-1 text-lg"></i>
                             <div>
                                 <strong class="text-white block">Síguenos en TikTok:</strong>
-                                <span class="text-gray-400">@alejandro0411</span>
+                                <span class="text-gray-400">@electroluna2000</span>
                             </div>
                         </div>
                     </div>
                     <div class="mt-8">
-                        <a href="https://wa.me/584121127920?text=Hola,%20necesito%20información%20sobre%20cómo%20llegar%20al%20taller." target="_blank" class="w-full bg-electricBlue text-darkBg font-bold py-3 rounded-xl hover:bg-cyan-300 transition-all block text-center shadow-lg shadow-electricBlue/20">
+                        <a href="https://wa.me/584124028510?text=Hola,%20necesito%20información%20sobre%20cómo%20llegar%20al%20taller." target="_blank" class="w-full bg-electricBlue text-darkBg font-bold py-3 rounded-xl hover:bg-cyan-300 transition-all block text-center shadow-lg shadow-electricBlue/20">
                             Consultar Dirección Exacta
                         </a>
                     </div>
@@ -283,7 +362,7 @@
     </section>
 
     <!-- SECCIÓN TESTIMONIOS -->
-    <section id="testimonios" class="py-20 bg-darkBg/50 border-t border-gray-800/60">
+    <section id="testimonios" class="py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
                 <h2 class="font-tech text-3xl sm:text-4xl font-bold">Lo que opinan <span class="text-electricBlue">nuestros clientes</span></h2>
@@ -319,7 +398,7 @@
     </section>
 
     <!-- SECCIÓN CONTACTO -->
-    <section id="contacto" class="py-20">
+    <section id="contacto" class="py-20 bg-darkBg/50 border-t border-gray-800/60">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
                 <div class="space-y-6">
@@ -329,23 +408,23 @@
                     </p>
                     
                     <div class="space-y-4 pt-2">
-                        <a href="https://wa.me/584121127920?text=Hola,%20necesito%20más%20información%20sobre%20sus%20servicios." target="_blank" class="flex items-center space-x-4 p-4 bg-cardBg border border-gray-800 rounded-xl hover:border-neonGreen transition-all group">
+                        <a href="https://wa.me/584124028510?text=Hola,%20necesito%20más%20información%20sobre%20sus%20servicios." target="_blank" class="flex items-center space-x-4 p-4 bg-cardBg border border-gray-800 rounded-xl hover:border-neonGreen transition-all group">
                             <div class="w-12 h-12 rounded-lg bg-neonGreen/10 text-neonGreen flex items-center justify-center text-xl group-hover:bg-neonGreen group-hover:text-darkBg transition-all">
                                 <i class="fa-brands fa-whatsapp"></i>
                             </div>
                             <div>
                                 <span class="text-xs text-gray-400 block">Escríbenos al WhatsApp</span>
-                                <span class="font-bold text-white text-lg">0412-112-79-20</span>
+                                <span class="font-bold text-white text-lg">0412-402-8510</span>
                             </div>
                         </a>
 
-                        <a href="https://www.tiktok.com/@alejandro0411" target="_blank" class="flex items-center space-x-4 p-4 bg-cardBg border border-gray-800 rounded-xl hover:border-electricBlue transition-all group">
+                        <a href="https://www.tiktok.com/@electroluna2000" target="_blank" class="flex items-center space-x-4 p-4 bg-cardBg border border-gray-800 rounded-xl hover:border-electricBlue transition-all group">
                             <div class="w-12 h-12 rounded-lg bg-electricBlue/10 text-electricBlue flex items-center justify-center text-xl group-hover:bg-electricBlue group-hover:text-darkBg transition-all">
                                 <i class="fa-brands fa-tiktok"></i>
                             </div>
                             <div>
                                 <span class="text-xs text-gray-400 block">Visita nuestro TikTok</span>
-                                <span class="font-bold text-white text-lg">@alejandro0411</span>
+                                <span class="font-bold text-white text-lg">@electroluna2000</span>
                             </div>
                         </a>
                     </div>
@@ -398,13 +477,13 @@
             </p>
 
             <div class="flex space-x-4 text-lg">
-                <a href="https://wa.me/584121127920" target="_blank" class="text-gray-400 hover:text-neonGreen transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
-                <a href="https://www.tiktok.com/@alejandro0411" target="_blank" class="text-gray-400 hover:text-electricBlue transition-colors"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="https://wa.me/584124028510" target="_blank" class="text-gray-400 hover:text-neonGreen transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://www.tiktok.com/@electroluna2000" target="_blank" class="text-gray-400 hover:text-electricBlue transition-colors"><i class="fa-brands fa-tiktok"></i></a>
             </div>
         </div>
     </footer>
 
-    <!-- SCRIPT INTERACTIVO -->
+    <!-- SCRIPT INTERACTIVO Y GALERÍA -->
     <script>
         // Menú móvil toggle
         const menuBtn = document.getElementById('menu-btn');
@@ -414,7 +493,7 @@
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Formulario conectado a WhatsApp
+        // Formulario de contacto conectado a WhatsApp
         const contactForm = document.getElementById('contact-form');
         const formSuccess = document.getElementById('form-success');
 
@@ -425,13 +504,128 @@
             const mensaje = document.getElementById('mensaje').value;
 
             const textoWhatsApp = `Hola, mi nombre es *${nombre}*. Me interesa consultar sobre: *${asunto}*. Detalles: ${mensaje}`;
-            const urlWhatsApp = `https://wa.me/584121127920?text=${encodeURIComponent(textoWhatsApp)}`;
+            const urlWhatsApp = `https://wa.me/584124028510?text=${encodeURIComponent(textoWhatsApp)}`;
 
             formSuccess.classList.remove('hidden');
             setTimeout(() => {
                 window.open(urlWhatsApp, '_blank');
             }, 1000);
         });
+
+        // --- SISTEMA DE GALERÍA, LIKES Y COMENTARIOS ---
+        let postsData = JSON.parse(localStorage.getItem('electroLunaPosts')) || [
+            {
+                id: 'demo-1',
+                title: 'Reparación de Backlight TV Samsung',
+                mediaUrl: 'https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=800&q=80',
+                desc: 'Sustitución de tiras LED completas con modificación de corriente.',
+                likes: 12,
+                comments: [
+                    { author: 'Carlos M.', text: 'Excelente trabajo, mi televisor quedó como nuevo.' }
+                ]
+            }
+        ];
+
+        function renderPosts() {
+            const container = document.getElementById('posts-container');
+            container.innerHTML = '';
+
+            postsData.forEach(post => {
+                let commentsHtml = post.comments.map(c => `
+                    <div class="bg-darkBg/60 p-2 rounded-lg border border-gray-800">
+                        <strong class="text-electricBlue">${c.author}:</strong> ${c.text}
+                    </div>
+                `).join('');
+
+                let postHtml = `
+                    <div class="bg-cardBg border border-gray-800 rounded-2xl overflow-hidden flex flex-col justify-between shadow-lg">
+                        <div>
+                            <div class="h-48 bg-gray-900 relative overflow-hidden flex items-center justify-center">
+                                <img src="${post.mediaUrl}" alt="Reparación" class="w-full h-full object-cover">
+                                <span class="absolute top-3 left-3 bg-darkBg/80 backdrop-blur-sm text-neonGreen text-xs font-bold px-2.5 py-1 rounded-md">Taller</span>
+                            </div>
+                            <div class="p-6 space-y-3">
+                                <h4 class="font-bold text-lg text-white">${post.title}</h4>
+                                <p class="text-xs text-gray-400 leading-relaxed">${post.desc}</p>
+                            </div>
+                        </div>
+                        
+                        <div class="px-6 pb-6 pt-2 border-t border-gray-800/60 space-y-4">
+                            <div class="flex items-center justify-between text-sm">
+                                <button onclick="likePost('${post.id}')" class="flex items-center space-x-2 text-gray-400 hover:text-red-500 transition-colors">
+                                    <i class="fa-solid fa-heart text-red-500"></i>
+                                    <span class="font-semibold text-white">${post.likes}</span> Me gusta
+                                </button>
+                                <span class="text-xs text-gray-500">Electro Luna 2000</span>
+                            </div>
+
+                            <div class="space-y-2">
+                                <div class="space-y-1.5 max-h-28 overflow-y-auto text-xs">
+                                    ${commentsHtml}
+                                </div>
+                                <form onsubmit="addComment(event, '${post.id}')" class="flex space-x-2 pt-1">
+                                    <input type="text" id="input-${post.id}" placeholder="Escribe un comentario..." class="flex-1 bg-darkBg border border-gray-800 rounded-lg px-3 py-1.5 text-xs text-white focus:outline-none focus:border-electricBlue" required>
+                                    <button type="submit" class="bg-electricBlue text-darkBg px-3 py-1.5 rounded-lg text-xs font-bold hover:bg-cyan-300">Comentar</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                container.innerHTML += postHtml;
+            });
+        }
+
+        // Dar Like
+        function likePost(id) {
+            const post = postsData.find(p => p.id === id);
+            if (post) {
+                post.likes++;
+                localStorage.setItem('electroLunaPosts', JSON.stringify(postsData));
+                renderPosts();
+            }
+        }
+
+        // Agregar Comentario
+        function addComment(event, id) {
+            event.preventDefault();
+            const input = document.getElementById(`input-${id}`);
+            const text = input.value.trim();
+            if (text) {
+                const post = postsData.find(p => p.id === id);
+                if (post) {
+                    post.comments.push({ author: 'Visitante', text: text });
+                    localStorage.setItem('electroLunaPosts', JSON.stringify(postsData));
+                    renderPosts();
+                }
+            }
+        }
+
+        // Subir Nuevo Trabajo
+        const uploadForm = document.getElementById('upload-work-form');
+        uploadForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const title = document.getElementById('work-title').value;
+            const mediaUrl = document.getElementById('work-media-url').value;
+            const desc = document.getElementById('work-desc').value;
+
+            const newPost = {
+                id: 'post-' + Date.now(),
+                title: title,
+                mediaUrl: mediaUrl,
+                desc: desc,
+                likes: 0,
+                comments: []
+            };
+
+            postsData.unshift(newPost);
+            localStorage.setItem('electroLunaPosts', JSON.stringify(postsData));
+            renderPosts();
+            uploadForm.reset();
+            alert('¡Trabajo publicado con éxito en tu página!');
+        });
+
+        // Cargar publicaciones al iniciar
+        renderPosts();
     </script>
 </body>
 </html>
