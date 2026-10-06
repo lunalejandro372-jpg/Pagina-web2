@@ -41,7 +41,7 @@
 <body class="bg-darkBg text-gray-100 font-sans antialiased selection:bg-neonGreen selection:text-darkBg">
 
     <!-- BARRA DE NAVEGACIÓN -->
-    <nav class="fixed top-0 left-0 w-full z-50 bg-darkBg/90 backdrop-blur-md border-b border-gray-800">
+    <nav class="fixed top-0 left-0 w-full z-50 bg-darkBg/95 backdrop-blur-md border-b border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <div class="flex items-center space-x-3">
                 <div class="w-10 h-10 rounded-lg bg-gradient-to-tr from-electricBlue to-neonGreen flex items-center justify-center glow-box">
@@ -60,7 +60,7 @@
                 <a href="#nosotros" class="hover:text-electricBlue transition-colors">¿Por qué elegirnos?</a>
                 <a href="#contacto" class="hover:text-electricBlue transition-colors">Contacto</a>
                 <!-- Botón de Acceso Admin -->
-                <button onclick="toggleAdminLogin()" class="text-xs bg-gray-800 border border-gray-700 px-3 py-1.5 rounded-lg hover:border-neonGreen text-gray-300 transition-all flex items-center space-x-1.5">
+                <button id="admin-trigger-btn" class="text-xs bg-gray-800 border border-gray-700 px-3.5 py-2 rounded-lg hover:border-neonGreen text-gray-200 transition-all flex items-center space-x-1.5 cursor-pointer">
                     <i class="fa-solid fa-lock text-neonGreen"></i>
                     <span>Admin</span>
                 </button>
@@ -75,10 +75,10 @@
 
             <!-- Botón menú móvil -->
             <div class="md:hidden flex items-center space-x-3">
-                <button onclick="toggleAdminLogin()" class="text-xs bg-gray-800 border border-gray-700 px-2.5 py-1.5 rounded-lg text-neonGreen">
-                    <i class="fa-solid fa-lock"></i> Admin
+                <button id="admin-trigger-mobile" class="text-xs bg-gray-800 border border-gray-700 px-3 py-2 rounded-lg text-neonGreen flex items-center space-x-1">
+                    <i class="fa-solid fa-lock"></i> <span>Admin</span>
                 </button>
-                <button id="menu-btn" class="text-gray-300 hover:text-white focus:outline-none text-2xl">
+                <button id="menu-btn" class="text-gray-300 hover:text-white focus:outline-none text-2xl p-1">
                     <i class="fa-solid fa-bars"></i>
                 </button>
             </div>
@@ -101,7 +101,7 @@
     <!-- MODAL DE ACCESO DE ADMINISTRADOR (OCULTO) -->
     <div id="admin-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center px-4">
         <div class="bg-cardBg border border-gray-800 p-6 sm:p-8 rounded-2xl max-w-md w-full glow-box relative">
-            <button onclick="toggleAdminLogin()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-xl">
+            <button id="close-modal-btn" class="absolute top-4 right-4 text-gray-400 hover:text-white text-xl p-2">
                 <i class="fa-solid fa-xmark"></i>
             </button>
             <h3 class="font-tech text-xl font-bold mb-2 text-white flex items-center">
@@ -109,7 +109,7 @@
             </h3>
             <p class="text-xs text-gray-400 mb-6">Introduce tu clave de administrador para subir fotos de tus reparaciones.</p>
             
-            <form onsubmit="verifyAdmin(event)" class="space-y-4">
+            <form id="admin-login-form" class="space-y-4">
                 <div>
                     <label class="block text-xs font-semibold text-gray-400 mb-2">Contraseña Secreta</label>
                     <input type="password" id="admin-password" required class="w-full bg-darkBg border border-gray-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-neonGreen text-sm" placeholder="Contraseña...">
@@ -129,7 +129,7 @@
                     <h3 class="font-tech text-xl font-bold text-neonGreen flex items-center">
                         <i class="fa-solid fa-screwdriver-wrench mr-2"></i> Panel de Control - Subir Reparación
                     </h3>
-                    <button onclick="logoutAdmin()" class="text-xs bg-red-500/10 border border-red-500/30 text-red-400 px-3 py-1.5 rounded-lg hover:bg-red-500 hover:text-white transition-all">
+                    <button id="logout-admin-btn" class="text-xs bg-red-500/10 border border-red-500/30 text-red-400 px-3 py-1.5 rounded-lg hover:bg-red-500 hover:text-white transition-all">
                         Cerrar Sesión Admin
                     </button>
                 </div>
@@ -489,18 +489,220 @@
         </div>
     </footer>
 
-    <!-- SCRIPT DE FUNCIONAMIENTO Y PANEL ADMIN -->
+    <!-- SCRIPT DE FUNCIONAMIENTO Y CONTROL DE EVENTOS -->
     <script>
-        // Menú móvil toggle
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
+        document.addEventListener('DOMContentLoaded', () => {
+            // Menú móvil toggle
+            const menuBtn = document.getElementById('menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
 
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+            if (menuBtn && mobileMenu) {
+                menuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            // Formulario de contacto conectado a WhatsApp
+            const contactForm = document.getElementById('contact-form');
+            const formSuccess = document.getElementById('form-success');
+
+            if (contactForm) {
+                contactForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const nombre = document.getElementById('nombre').value;
+                    const asunto = document.getElementById('asunto').value;
+                    const mensaje = document.getElementById('mensaje').value;
+
+                    const textoWhatsApp = `Hola, mi nombre es *${nombre}*. Me interesa consultar sobre: *${asunto}*. Detalles: ${mensaje}`;
+                    const urlWhatsApp = `https://wa.me/584124028510?text=${encodeURIComponent(textoWhatsApp)}`;
+
+                    if (formSuccess) formSuccess.classList.remove('hidden');
+                    setTimeout(() => {
+                        window.open(urlWhatsApp, '_blank');
+                    }, 1000);
+                });
+            }
+
+            // --- CONTROL DE ACCESO ADMIN SEGURO ---
+            const ADMIN_PASS = "luna2000";
+            const adminModal = document.getElementById('admin-modal');
+            const adminPanel = document.getElementById('admin-panel');
+            const adminTriggerBtn = document.getElementById('admin-trigger-btn');
+            const adminTriggerMobile = document.getElementById('admin-trigger-mobile');
+            const closeModalBtn = document.getElementById('close-modal-btn');
+            const adminLoginForm = document.getElementById('admin-login-form');
+            const logoutAdminBtn = document.getElementById('logout-admin-btn');
+
+            function openModal() {
+                if (adminModal) adminModal.classList.remove('hidden');
+            }
+
+            function closeModal() {
+                if (adminModal) adminModal.classList.add('hidden');
+            }
+
+            if (adminTriggerBtn) adminTriggerBtn.addEventListener('click', openModal);
+            if (adminTriggerMobile) adminTriggerMobile.addEventListener('click', openModal);
+            if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
+
+            if (adminLoginForm) {
+                adminLoginForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const passInput = document.getElementById('admin-password');
+                    if (passInput && passInput.value === ADMIN_PASS) {
+                        closeModal();
+                        if (adminPanel) adminPanel.classList.remove('hidden');
+                        passInput.value = '';
+                        alert('¡Acceso concedido! Ya puedes subir fotos de tus reparaciones.');
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    } else {
+                        alert('Contraseña incorrecta.');
+                    }
+                });
+            }
+
+            if (logoutAdminBtn) {
+                logoutAdminBtn.addEventListener('click', () => {
+                    if (adminPanel) adminPanel.classList.add('hidden');
+                    alert('Has salido del panel de administración.');
+                });
+            }
+
+            // --- SISTEMA DE GALERÍA, LIKES Y COMENTARIOS ---
+            let postsData = JSON.parse(localStorage.getItem('electroLunaPostsAdmin')) || [
+                {
+                    id: 'demo-1',
+                    title: 'Reparación de Backlight TV Samsung',
+                    mediaUrl: 'https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=800&q=80',
+                    isVideo: false,
+                    desc: 'Sustitución de tiras LED completas con modificación de corriente.',
+                    likes: 12,
+                    comments: [
+                        { author: 'Carlos M.', text: 'Excelente trabajo, mi televisor quedó como nuevo.' }
+                    ]
+                }
+            ];
+
+            window.renderPosts = function() {
+                const container = document.getElementById('posts-container');
+                if (!container) return;
+                container.innerHTML = '';
+
+                postsData.forEach(post => {
+                    let commentsHtml = post.comments.map(c => `
+                        <div class="bg-darkBg/60 p-2 rounded-lg border border-gray-800">
+                            <strong class="text-electricBlue">${c.author}:</strong> ${c.text}
+                        </div>
+                    `).join('');
+
+                    let mediaHtml = post.isVideo ? 
+                        `<video src="${post.mediaUrl}" controls class="w-full h-full object-cover"></video>` :
+                        `<img src="${post.mediaUrl}" alt="Reparación" class="w-full h-full object-cover">`;
+
+                    let postHtml = `
+                        <div class="bg-cardBg border border-gray-800 rounded-2xl overflow-hidden flex flex-col justify-between shadow-lg">
+                            <div>
+                                <div class="h-56 bg-gray-900 relative overflow-hidden flex items-center justify-center">
+                                    ${mediaHtml}
+                                    <span class="absolute top-3 left-3 bg-darkBg/80 backdrop-blur-sm text-neonGreen text-xs font-bold px-2.5 py-1 rounded-md">Taller Electro Luna</span>
+                                </div>
+                                <div class="p-6 space-y-3">
+                                    <h4 class="font-bold text-lg text-white">${post.title}</h4>
+                                    <p class="text-xs text-gray-400 leading-relaxed">${post.desc}</p>
+                                </div>
+                            </div>
+                            
+                            <div class="px-6 pb-6 pt-2 border-t border-gray-800/60 space-y-4">
+                                <div class="flex items-center justify-between text-sm">
+                                    <button onclick="likePost('${post.id}')" class="flex items-center space-x-2 text-gray-400 hover:text-red-500 transition-colors">
+                                        <i class="fa-solid fa-heart text-red-500"></i>
+                                        <span class="font-semibold text-white">${post.likes}</span> Me gusta
+                                    </button>
+                                    <span class="text-xs text-gray-500">Electro Luna 2000</span>
+                                </div>
+
+                                <div class="space-y-2">
+                                    <div class="space-y-1.5 max-h-28 overflow-y-auto text-xs">
+                                        ${commentsHtml}
+                                    </div>
+                                    <form onsubmit="addComment(event, '${post.id}')" class="flex space-x-2 pt-1">
+                                        <input type="text" id="input-${post.id}" placeholder="Escribe un comentario..." class="flex-1 bg-darkBg border border-gray-800 rounded-lg px-3 py-1.5 text-xs text-white focus:outline-none focus:border-electricBlue" required>
+                                        <button type="submit" class="bg-electricBlue text-darkBg px-3 py-1.5 rounded-lg text-xs font-bold hover:bg-cyan-300">Comentar</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    container.innerHTML += postHtml;
+                });
+            }
+
+            window.likePost = function(id) {
+                const post = postsData.find(p => p.id === id);
+                if (post) {
+                    post.likes++;
+                    localStorage.setItem('electroLunaPostsAdmin', JSON.stringify(postsData));
+                    window.renderPosts();
+                }
+            }
+
+            window.addComment = function(event, id) {
+                event.preventDefault();
+                const input = document.getElementById(`input-${id}`);
+                const text = input.value.trim();
+                if (text) {
+                    const post = postsData.find(p => p.id === id);
+                    if (post) {
+                        post.comments.push({ author: 'Visitante', text: text });
+                        localStorage.setItem('electroLunaPostsAdmin', JSON.stringify(postsData));
+                        window.renderPosts();
+                    }
+                }
+            }
+
+            // Subir Nuevo Trabajo desde archivo local
+            const adminUploadForm = document.getElementById('admin-upload-form');
+            if (adminUploadForm) {
+                adminUploadForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const title = document.getElementById('adm-title').value;
+                    const fileInput = document.getElementById('adm-file');
+                    const desc = document.getElementById('adm-desc').value;
+
+                    if (fileInput.files && fileInput.files[0]) {
+                        const file = fileInput.files[0];
+                        const reader = new FileReader();
+
+                        reader.onload = function(uploadEvent) {
+                            const base64String = uploadEvent.target.result;
+                            const isVideo = file.type.startsWith('video');
+
+                            const newPost = {
+                                id: 'post-' + Date.now(),
+                                title: title,
+                                mediaUrl: base64String,
+                               isVideo: isVideo,
+                                desc: desc,
+                                likes: 0,
+                                comments: []
+                            };
+
+                            postsData.unshift(newPost);
+                            localStorage.setItem('electroLunaPostsAdmin', JSON.stringify(postsData));
+                            window.renderPosts();
+                            adminUploadForm.reset();
+                            if (adminPanel) adminPanel.classList.add('hidden');
+                            alert('¡Trabajo publicado con éxito! Ya se ve reflejado en la pestaña principal.');
+                        };
+
+                        reader.readAsDataURL(file);
+                    }
+                });
+            }
+
+            // Cargar publicaciones al iniciar
+            window.renderPosts();
         });
-
-        // Formulario de contacto conectado a WhatsApp
-        const contactForm = document.getElementById('contact-form');
-        const formSuccess = document.getElementById('form-success');
-
-        contactForm.addEventListener('submit', (e)
+    </script>
+</body>
+</html>
